@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
+import ScrollVideo from "@/components/ScrollVideo";
 
 /* HERO SLIDES */
 interface HeroSlide {
@@ -336,14 +337,10 @@ export default function Home() {
       {/* GTA ONLINE */}
       <section className="bg-black">
         <div className="relative h-[700px] w-full overflow-hidden md:h-[1000px]">
-          <video
-            src="/gallery/video3.mp4"
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="absolute inset-0 h-full w-full object-cover object-center"
-          />
+<ScrollVideo
+  src="/gallery/video3.mp4"
+  className="absolute inset-0 h-full w-full object-cover object-center"
+  />
 
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent" />
 
@@ -418,14 +415,10 @@ export default function Home() {
       {/* RED DEAD */}
       <section className="bg-black">
         <div className="relative h-[700px] w-full overflow-hidden md:h-[1000px]">
-          <video
-            src="/gallery/video4.mp4"
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="absolute inset-0 h-full w-full object-cover object-center"
-          />
+<ScrollVideo
+  src="/gallery/video4.mp4"
+  className="absolute inset-0 h-full w-full object-cover object-center"
+  />
 
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent" />
 

@@ -7,6 +7,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from "@/components/Navbar";
+import ScrollVideo from "@/components/ScrollVideo";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -1294,16 +1295,11 @@ export default function GTAVIPage() {
         id="explore"
         className="intro relative h-[72svh] min-h-[500px] overflow-hidden bg-black sm:h-[75vh] sm:min-h-[600px] lg:h-[85vh] lg:min-h-[650px]"
       >
-        <video
-          className="intro-video absolute inset-0 h-full w-full object-cover object-[58%_center] sm:object-center"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-        >
-          <source src="/gallery/video1.mp4" type="video/mp4" />
-        </video>
+<ScrollVideo
+  src="/gallery/video1.mp4"
+  preload="metadata"
+  className="intro-video absolute inset-0 h-full w-full object-cover object-[58%_center] sm:object-center"
+  />
 
         <div className="intro-overlay absolute inset-0 bg-gradient-to-r from-black/ via-black/40 to-black/75" />
 
@@ -1588,16 +1584,11 @@ export default function GTAVIPage() {
       ===================================================== */}
 
       <section className="wildlife relative min-h-[620px] overflow-hidden bg-black sm:min-h-[720px] md:min-h-[800px] lg:min-h-[850px]">
-        <video
-          className="wildlife-video absolute inset-0 h-full w-full object-cover object-center"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-        >
-          <source src="/gallery/video4.mp4" type="video/mp4" />
-        </video>
+<ScrollVideo
+  src="/gallery/video4.mp4"
+  preload="metadata"
+  className="wildlife-video absolute inset-0 h-full w-full object-cover object-center"
+  />
 
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-black/40" />
 
@@ -1613,7 +1604,7 @@ export default function GTAVIPage() {
             </h2>
 
             <p className="mt-5 max-w-[340px] text-xs leading-6 text-white/60 sm:mt-7 sm:max-w-xl sm:text-sm sm:leading-8 md:text-base">
-              The world doesn't stop at the city limits. Explore remote
+              The world doesn&apos;t stop at the city limits. Explore remote
               roads, open landscapes and places far away from the neon lights.
             </p>
           </div>
