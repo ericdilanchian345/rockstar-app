@@ -15,20 +15,38 @@ export default function ScrollVideo({ src, className, preload = "metadata" }: Sc
     const video = videoRef.current;
     if (!video) return;
 
+    video.muted = true;
+    video.defaultMuted = true;
+    video.load();
+
+    let isVisible = false;
+    const playWhenReady = () => {
+      if (!isVisible) return;
+      video.play().catch(() => undefined);
+    };
+
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          video.play().catch(() => undefined);
+        isVisible = entry.isIntersecting;
+        if (isVisible) {
+          playWhenReady();
         } else {
           video.pause();
         }
       },
-      { threshold: 0.2 },
+      { threshold: 0.05 },
     );
 
+    video.addEventListener("loadeddata", playWhenReady);
+    video.addEventListener("canplay", playWhenReady);
     observer.observe(video);
-    return () => observer.disconnect();
-  }, []);
+
+    return () => {
+      video.removeEventListener("loadeddata", playWhenReady);
+      video.removeEventListener("canplay", playWhenReady);
+      observer.disconnect();
+    };
+  }, [src]);
 
   return (
     <video
