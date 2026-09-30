@@ -3,8 +3,15 @@
 import { useState } from "react";
 import Image from "next/image";
 
+type Video = {
+  src: string;
+  thumb: string;
+  title: string;
+  desc: string;
+};
+
 // Demo video data
-const videos = [
+const videos: Video[] = [
   {
     src: "/gallery/video1.mp4",
     thumb: "/gallery/images2.jpg",
@@ -38,7 +45,7 @@ const videos = [
 ];
 
 export default function VideosPage() {
-  const [openVideo, setOpenVideo] = useState(null);
+  const [openVideo, setOpenVideo] = useState<Video | null>(null);
 
   return (
     <div className="bg-black text-white min-h-screen">
