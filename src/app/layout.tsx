@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import "./globals.css";
 import Navbar from "../components/Navbar"; // مسیر دقیق کامپوننت Navbar
 
@@ -6,7 +7,7 @@ export const metadata = {
   description: "Created with Next.js",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body>

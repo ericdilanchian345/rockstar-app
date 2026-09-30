@@ -1,5 +1,3 @@
-import { desc } from "framer-motion/client";
-
 export default function Games() {
   const news = [
     {
